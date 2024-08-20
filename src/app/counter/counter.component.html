@@ -1,0 +1,16 @@
+<div class="heading">
+    <h1>NgRx Counter App</h1>
+
+    <div class="num">
+        <input type="number" [(ngModel)]="initialCount" (ngModelChange)="onSetCount()" placeholder="Enter initial count">
+    </div>
+
+    <div class="counter">
+        <h2>{{count$ | async}}</h2>
+    </div>
+    <div class="btn">
+        <button class="btn-increment" (click)="increment()">Increment</button>
+        <button class="btn-decrement" (click)="decrement()">Decrement</button>
+        <button class="btn-reset" (click)="reset()">Reset</button>
+    </div>
+</div>
