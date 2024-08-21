@@ -4,14 +4,14 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
 import { counterReducer } from './states/counter/counter.reducer';
-import { provideEffects } from '@ngrx/effects';
-import { CounterEffects } from './states/counter/counter.effect';
+
+
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
      provideStore(),
      provideState({name:'counter',reducer:counterReducer}),
-     provideEffects(CounterEffects)
+    
      
     ]
 };
