@@ -1,13 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#003c77 ;
+    box-shadow: #003c77 0px 20px 30px -10px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.5rem;
+}
 
 .heading{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:2rem;  
+    margin-top:1rem;  
 }
 .heading h1{
     font-size: 3rem;
     color: white;
+}
+
+.counter{
+    margin-top: 2rem;
+}
+.counter h2{
+    font-size: 2.5rem;
+    color: blue;
 }
 
 .num{
@@ -22,14 +39,6 @@
     border-radius: 0.5rem;
     border: none;
     font-size: 1.2rem;
-}
-
-.counter{
-    margin-top: 3rem;
-}
-.counter h2{
-    font-size: 2rem;
-    color: blue;
 }
 .btn{
     margin-top: 3rem;

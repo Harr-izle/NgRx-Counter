@@ -1,5 +1,5 @@
 import { setCount } from './../states/counter/counter.action';
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppState } from '../states/app.state';
 import { Store } from '@ngrx/store';
@@ -21,6 +21,10 @@ export class CounterComponent {
 
   constructor(private store:Store<AppState>){
     this.count$ = this.store.select(selectCount)
+  }
+
+  ngOnInit() {
+    // this.loadInitialCountFromStorage();
   }
 
   increment(){
