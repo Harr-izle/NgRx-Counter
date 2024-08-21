@@ -23,25 +23,39 @@ export class CounterComponent {
     this.count$ = this.store.select(selectCount)
   }
 
+ 
   ngOnInit() {
-    // this.loadInitialCountFromStorage();
+    this.loadCountFromStorage();
   }
 
-  increment(){
-    this.store.dispatch(increment())
+  increment() {
+    this.store.dispatch(increment());
   }
 
-  decrement(){
-    this.store.dispatch(decrement())
+  decrement() {
+    this.store.dispatch(decrement());
   }
 
-  reset(){
-    this.store.dispatch(reset())
-    this.initialCount = 0
+  reset() {
+    this.store.dispatch(reset());
+    this.initialCount = 0;
+    this.saveCountToStorage(0);
   }
 
   onSetCount() {
     this.store.dispatch(setCount({ count: this.initialCount }));
   }
 
+  loadCountFromStorage() {
+    const storedCount = localStorage.getItem('count');
+    if (storedCount !== null) {
+      const count = parseInt(storedCount, 10);
+      this.initialCount = count;
+      this.store.dispatch(setCount({ count }));
+    }
+  }
+
+  saveCountToStorage(count: number) {
+    localStorage.setItem('count', count.toString());
+  }
 }
